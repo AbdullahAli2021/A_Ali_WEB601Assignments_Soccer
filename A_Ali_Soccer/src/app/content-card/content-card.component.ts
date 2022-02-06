@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 
 @Component({
@@ -7,18 +7,26 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./content-card.component.scss']
 })
 export class ContentCardComponent implements OnInit {
-  messi:Content;
+  @Input() content: Content;
+
   constructor() {
-    this.messi ={
-    title:"messi",
-    id: 0,
-    type: "player",
-    imgURL: "https://library.sportingnews.com/styles/crop_style_16_9_desktop/s3/2021-08/lionel-messi-barcelona_1yojy2xfu73113vl8uaoqe9yd.jpg?itok=0jOCYj7p",
-    description: "Liionel messi the best player of the world",
-    creator: "Barcelona"
-  };
+    this.content = {
+      id: 0,
+      title: "",
+      imgURL:
+      'https://angular.io/assets/images/logos/angular/angular.png'
+      ,
+      description: 'This is the body of the content',
+      creator: 'news'
+      };
+
+
 
 }
+console1(content:Content) {
+  console.log(content.id, this.content.title);
+}
+
   ngOnInit(): void {
   }
 }

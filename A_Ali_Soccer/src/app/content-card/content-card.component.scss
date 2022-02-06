@@ -1,0 +1,12 @@
+:host {
+  display: block;
+    width: 400px;
+    margin: 10px;
+    border: 1px black solid;
+    padding: 10px;
+    text-align: center;
+
+    }
+
+:host.is-first {
+  border: 2px black solid;}
