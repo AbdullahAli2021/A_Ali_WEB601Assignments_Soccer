@@ -17,7 +17,9 @@ export class ContentCardComponent implements OnInit {
       'https://angular.io/assets/images/logos/angular/angular.png'
       ,
       description: 'This is the body of the content',
-      creator: 'news'
+      creator: 'news',
+      type:'player',
+      tags:["player","soccer","messi","argentina"]
       };
 
 
