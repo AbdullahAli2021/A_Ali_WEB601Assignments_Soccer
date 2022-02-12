@@ -8,5 +8,14 @@
 
     }
 
-:host.is-first {
-  border: 2px black solid;}
+:host.nocontent {
+  background-color: chartreuse;}
+  :host.winger {
+    background-color: red;}
+
+    :host.striker {
+      background-color: sandybrown;}
+      :host.playmaker {
+        background-color: blue;}
+        :host.manager {
+          background-color: yellow;}

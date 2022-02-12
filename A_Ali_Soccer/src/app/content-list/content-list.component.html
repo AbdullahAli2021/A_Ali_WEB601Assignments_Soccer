@@ -1,4 +1,32 @@
+<input #title>
+<button (click)="IsTitle(title.value)">Submit</button>
+<div *ngIf="IsTitle(title.value); else notShow" [class.exist]="IsTitle(title.value)">
+  <p>
+    The title exist
+  </p>
+</div>
 
-<app-content-card *ngFor="let item of playerList; index as i;first as isFirst"
-[content]="item"[class.is-first]='isFirst'>
+<ng-template #notShow >
+  <p [class.noexist]="!IsTitle(title.value)">
+    The title doesn't exist
+  </p>
+</ng-template>
+<app-content-card *ngFor="let item of playerList | contentFilter; index as i;first as isFirst"
+[content]="item"[class.nocontent]="item">
+</app-content-card>
+<br><br><br>
+<app-content-card *ngFor="let item of playerList | contentFilter:'winger'; index as i;first as isFirst"
+[content]="item"[class.winger]="item">
+</app-content-card>
+<br><br><br>
+<app-content-card *ngFor="let item of playerList | contentFilter:'striker'; index as i;first as isFirst"
+[content]="item"[class.striker]="item">
+</app-content-card>
+<br><br><br>
+<app-content-card *ngFor="let item of playerList | contentFilter:'manager'; index as i;first as isFirst"
+[content]="item"[class.manager]="item">
+</app-content-card>
+<br><br><br>
+<app-content-card *ngFor="let item of playerList | contentFilter:'playmaker'; index as i;first as isFirst"
+[content]="item"[class.playmaker]="item">
 </app-content-card>
