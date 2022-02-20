@@ -60,7 +60,7 @@ export class ContentListComponent implements OnInit {
       title: 'Luis Suarez',
       description: "Best striker in the world",
       creator: "Fc Barcelona",
-      imgURL: 'https://futhead.cursecdn.com/static/img/fm/18/wcplayers/176580.png',
+      imgURL: '',
       tags:["player","soccer","suarez","uruguay"],
 
     },
