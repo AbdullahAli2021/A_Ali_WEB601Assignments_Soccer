@@ -76,6 +76,11 @@ export class ContentListComponent implements OnInit {
     }
   ];
 
+  let ourPromise = new Promise((success, fail) =>{
+    success("Success was achieved!");
+
+    fail("Failure :(");
+    })
 
    }
 
@@ -89,6 +94,18 @@ export class ContentListComponent implements OnInit {
 
     else return false;
   }
+
+  addContentToList(newContentFromChild: Content) {
+    console.log("old array values ", this.playerList);
+
+    this.playerList.push(newContentFromChild);
+    this.playerList = [...this.playerList]; // using the spread operator
+
+    console.log("Did the item get added? ", newContentFromChild);
+    console.log("new array values ", this.playerList);
+  }
+
+
 
 
 

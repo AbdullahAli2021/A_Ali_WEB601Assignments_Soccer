@@ -1,3 +1,4 @@
+<app-create-content (newContentEvent)="addContentToList($event)"></app-create-content>
 <input #title>
 <button (click)="IsTitle(title.value)">Submit</button>
 <div *ngIf="IsTitle(title.value); else notShow" [class.exist]="IsTitle(title.value)">

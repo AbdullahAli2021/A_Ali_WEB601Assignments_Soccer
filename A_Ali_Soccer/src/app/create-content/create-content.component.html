@@ -1,0 +1,31 @@
+<div>
+  id: <input #id>
+</div>
+<div>
+  Title: <input #title>
+</div>
+<div>
+  creator: <input #creator>
+</div>
+
+<div>
+  image: <input #imgURL>
+</div>
+<div>
+  Description: <input #description>
+</div>
+<div>
+  type: <input #type>
+</div>
+<div>
+  tags: <input #tags>
+</div>
+<div>
+  <button (click)="addContent(id.value, title.value, creator.value, imgURL.value, description.value, type.value, tags.value);
+  id.value =''; title.value=''; creator.value=''; imgURL.value=''; description.value=''; type.value =''; tags.value=''">Add Content Item</button>
+</div>
+<div *ngIf="failed"[class.failed]='failed'>
+  <p>
+    Failure:you have to put input the required fields
+  </p>
+</div>
