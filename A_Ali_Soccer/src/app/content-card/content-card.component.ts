@@ -7,7 +7,7 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./content-card.component.scss']
 })
 export class ContentCardComponent implements OnInit {
-  @Input() content: Content;
+  @Input() content?: Content;
 
   constructor() {
     this.content = {
@@ -26,7 +26,7 @@ export class ContentCardComponent implements OnInit {
 
 }
 console1(content:Content) {
-  console.log(content.id, this.content.title);
+  console.log(content.id, content.title);
 }
 
   ngOnInit(): void {

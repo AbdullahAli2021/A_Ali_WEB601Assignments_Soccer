@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Content } from './helper-files/content-interface';
+import { SoccerService } from './services/soccer.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'A_Ali_Soccer';
+  getId?: Content;
+  constructor(private SoccerService: SoccerService ) {}
+
+  ngOnInit(): void {
+
+
+
+
 }
+button1(id:any){
+this.SoccerService.getOneContentObs(id).subscribe((getContent: any) => this.getId = getContent);}
+
+}
+

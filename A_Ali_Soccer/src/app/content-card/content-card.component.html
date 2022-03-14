@@ -1,12 +1,12 @@
 
-<div>  <h1>{{content.title}}</h1>  </div>
- <div>  <h2>{{content.creator}}</h2>  </div>
-     <div>  <h3>{{content.description}}</h3>  </div>
-     <div [ngSwitch]='content.imgURL'>
+<div>  <h1>{{content?.title}}</h1>  </div>
+ <div>  <h2>{{content?.creator}}</h2>  </div>
+     <div>  <h3>{{content?.description}}</h3>  </div>
+     <div [ngSwitch]='content?.imgURL'>
       <img *ngSwitchCase='""' src="https://images.vexels.com/media/users/3/141231/isolated/lists/c59b6035d104844f7006c5d74f200be6-soccer-player-hitting-1.png">
-      <img *ngSwitchDefault src="{{content.imgURL}}">
+      <img *ngSwitchDefault src="{{content?.imgURL}}">
       </div>
-     <div appHoverAffect css1="under" [value1]='"underline"'><h4 >{{content.type}}</h4></div>
+     <div appHoverAffect css1="under" [value1]='"underline"'><h4 >{{content?.type}}</h4></div>
      <div class="tags" *ngIf="content?.tags">
       <span  appHoverAffect css1="bold" [value1]='"bold"' class="tag" *ngFor="let tag of content?.tags">
           #{{ tag }}
