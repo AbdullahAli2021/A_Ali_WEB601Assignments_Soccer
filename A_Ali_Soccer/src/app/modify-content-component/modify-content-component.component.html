@@ -1,0 +1,20 @@
+<div>
+  title: <input #title>
+</div>
+
+<div>
+  image: <input #imgURL>
+</div>
+<div>
+  description: <input #description>
+</div>
+<div>
+  creator: <input #creator>
+</div>
+<div>
+  type: <input #type>
+</div>
+
+<div>
+  <button (click)="addPlayer(title.value, imgURL.value, description.value, creator.value, type.value);title.value=''; creator.value=''; imgURL.value=''; description.value=''; type.value ='';">Add Player Item</button>
+</div>

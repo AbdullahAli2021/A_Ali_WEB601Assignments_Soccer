@@ -31,9 +31,25 @@ export class ContentListComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.SoccerService.getContentObs().subscribe(playerArray => this.playerList = playerArray);
+    this.getPlayerFromServer();
+
 
 
   }
+
+  getPlayerFromServer(): void{
+    this.SoccerService.getContentObs().subscribe(playerArray => this.playerList = playerArray);
+  }
+  addContentToList(newContentItem: Content): void {
+    this.SoccerService.addContent(newContentItem)
+    .subscribe(newContentFromServer =>
+    this.playerList.push(newContentFromServer)
+    );
+    this.playerList = [...this.playerList];
+    this.getPlayerFromServer();
+    console.log(this.playerList);
+
+
+    }
 
 }

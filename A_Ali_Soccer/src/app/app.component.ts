@@ -18,8 +18,6 @@ export class AppComponent {
 
 
 }
-button1(id:any){
-this.SoccerService.getOneContentObs(id).subscribe((getContent: any) => this.getId = getContent);}
 
 }
 

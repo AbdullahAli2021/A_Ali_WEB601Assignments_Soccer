@@ -53,7 +53,7 @@ export const  PLAYERLIST:Content[]  = [{
 
     },
     {
-      id: 5,
+      id: 6,
       title: 'Pep Guardiola',
       description: "Best manager in the world",
       creator: "Man City",
