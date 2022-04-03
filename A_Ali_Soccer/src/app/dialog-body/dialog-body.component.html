@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>Add Player</h2>
+
+<mat-dialog-content>
+
+  <mat-form-field>
+    <mat-label> Title</mat-label>
+    <input matInput placeholder="title" #title>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Image</mat-label>
+    <input matInput placeholder="image URL" #imgURL>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <input matInput placeholder="0" #description>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Creator</mat-label>
+    <input matInput placeholder="0" #creator>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>type</mat-label>
+    <input matInput placeholder="0" #type>
+  </mat-form-field>
+
+  <div>
+    <button mat-raised-button color="primary" (click)="addPlayer(title.value, imgURL.value, description.value, creator.value, type.value);title.value=''; creator.value=''; imgURL.value=''; description.value=''; type.value ='';">Add Player Item</button>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button" (click)="close()">Close</button>
+</mat-dialog-actions>

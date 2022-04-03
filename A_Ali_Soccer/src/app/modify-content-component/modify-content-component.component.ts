@@ -1,5 +1,7 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
+import {MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { DialogBodyComponent } from '../dialog-body/dialog-body.component';
 
 @Component({
   selector: 'app-modify-content-component',
@@ -10,19 +12,26 @@ export class ModifyContentComponentComponent implements OnInit {
   @Output() newPlayerEvent: EventEmitter<Content> = new EventEmitter<Content>();
   newPlayer?: Content;
 
-  constructor() { }
+  constructor(private matDialog: MatDialog) { }
 
   ngOnInit(): void {
   }
-  addPlayer(title: string, description: string, imgURL: string, creator: string, type: string): void {
-    this.newPlayer = {
-      title: title,
-      description: description,
-      creator: creator,
-      imgURL: imgURL,
-      type: type,
-    };
-    console.log(this.newPlayer);
-    this.newPlayerEvent.emit(this.newPlayer);
+  openDialog() {
+    const dialogConfig = new MatDialogConfig();
+    let dialogRef = this.matDialog.open(DialogBodyComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(res => {
+      this.newPlayer = {
+        title: res.title,
+        description: res.description,
+        creator: res.creator,
+        imgURL: res.imgURL,
+        type: res.type,
+      };
+      console.log(this.newPlayer);
+      this.newPlayerEvent.emit(this.newPlayer);
+    })
+
   }
+
+
 }

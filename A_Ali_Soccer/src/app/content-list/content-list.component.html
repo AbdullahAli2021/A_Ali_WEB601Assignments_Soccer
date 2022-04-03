@@ -1,6 +1,9 @@
 <app-modify-content-component (newPlayerEvent)="addContentToList($event)"></app-modify-content-component>
-<input #title>
-<button (click)="IsTitle(title.value)">Submit</button>
+<mat-form-field>
+  <mat-label> Title</mat-label>
+  <input matInput placeholder="title" #title>
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="IsTitle(title.value)">Submit</button>
 <div *ngIf="IsTitle(title.value); else notShow" [class.exist]="IsTitle(title.value)">
   <p>
     The title exist
