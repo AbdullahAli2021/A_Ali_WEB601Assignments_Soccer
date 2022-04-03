@@ -17,6 +17,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { DialogBodyComponent } from './dialog-body/dialog-body.component';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule,
+    MatChipsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,14 +1,25 @@
-
-<div>  <h1>{{content?.title}}</h1>  </div>
- <div>  <h2>{{content?.creator}}</h2>  </div>
-     <div>  <h3>{{content?.description}}</h3>  </div>
-     <div [ngSwitch]='content?.imgURL'>
-      <img *ngSwitchCase='""' src="https://images.vexels.com/media/users/3/141231/isolated/lists/c59b6035d104844f7006c5d74f200be6-soccer-player-hitting-1.png">
-      <img *ngSwitchDefault src="{{content?.imgURL}}">
-      </div>
-     <div appHoverAffect css1="under" [value1]='"underline"'><h4 >{{content?.type}}</h4></div>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><h1>{{content?.title}}</h1> </mat-card-title>
+    <mat-card-subtitle><h2>{{content?.creator}}</h2></mat-card-subtitle>
+  </mat-card-header>
+  <div [ngSwitch]='content?.imgURL'>
+    <img mat-card-image *ngSwitchCase='""' src="https://images.vexels.com/media/users/3/141231/isolated/lists/c59b6035d104844f7006c5d74f200be6-soccer-player-hitting-1.png">
+    <img mat-card-image *ngSwitchDefault src="{{content?.imgURL}}">
+    </div>
+  <mat-card-content>
+    <h3>{{content?.description}}</h3>
+    <div appHoverAffect css1="under" [value1]='"underline"'><h4 >{{content?.type}}</h4></div>
      <div class="tags" *ngIf="content?.tags">
-      <span  appHoverAffect css1="bold" [value1]='"bold"' class="tag" *ngFor="let tag of content?.tags">
+      <mat-chip-list aria-label="Fish selection">
+        <span  appHoverAffect css1="bold" [value1]='"bold"' class="tag" *ngFor="let tag of content?.tags">
+        <mat-chip color="accent" selected>
           #{{ tag }}
-      </span>
-  </div>
+      </mat-chip>
+    </span>
+      </mat-chip-list>
+
+     </div>
+  </mat-card-content>
+</mat-card>
+
