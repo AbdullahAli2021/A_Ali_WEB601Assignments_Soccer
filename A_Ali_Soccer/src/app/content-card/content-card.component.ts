@@ -29,6 +29,7 @@ console1(content:Content) {
   console.log(content.id, content.title);
 }
 
+
   ngOnInit(): void {
   }
 }
