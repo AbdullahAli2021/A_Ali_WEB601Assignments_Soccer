@@ -20,6 +20,12 @@ export class SoccerService {
     return this.http.get<Content[]>("api/content");
   }
 
+  getContentItem(id: number): Observable<Content>{
+    console.log("Retrieving OBSERVABLE content item");
+    this.messageService.add('id:'+id+ 'title:' + PLAYERLIST[id].title );
+    return this.http.get<Content>("api/content/" + id);
+  }
+
 
   addContent(newContentItem: Content): Observable<Content>{
     console.log("added the new content: ", newContentItem);

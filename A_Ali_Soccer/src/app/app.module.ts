@@ -19,6 +19,8 @@ import { DialogBodyComponent } from './dialog-body/dialog-body.component';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import {MatChipsModule} from '@angular/material/chips';
     HoverAffectDirective,
     ModifyContentComponentComponent,
     MessagesComponent,
-    DialogBodyComponent
+    DialogBodyComponent,
+    ContentDetailComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

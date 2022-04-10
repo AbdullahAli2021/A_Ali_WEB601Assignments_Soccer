@@ -8,7 +8,7 @@
     <img mat-card-image *ngSwitchDefault src="{{content?.imgURL}}">
     </div>
   <mat-card-content>
-
+    <div>{{content?.description}}</div>
     <div appHoverAffect css1="under" [value1]='"underline"'><h4 >{{content?.type}}</h4></div>
      <div class="tags" *ngIf="content?.tags">
       <mat-chip-list aria-label="Fish selection">
@@ -20,9 +20,6 @@
       </mat-chip-list>
 
      </div>
-     <a [routerLink]="['/list', content?.id ?? 0]" routerLinkActive="active">
-      Content Details
-    </a>
+     <a routerLink="../">Go back to the list</a>
   </mat-card-content>
 </mat-card>
-
