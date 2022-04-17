@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Content } from './helper-files/content-interface';
+import { LogUpdateService } from './log-update.service';
 import { SoccerService } from './services/soccer.service';
 
 @Component({
@@ -10,9 +11,10 @@ import { SoccerService } from './services/soccer.service';
 export class AppComponent {
   title = 'A_Ali_Soccer';
   getId?: Content;
-  constructor(private SoccerService: SoccerService ) {}
+  constructor(private SoccerService: SoccerService, private logService: LogUpdateService ) {}
 
   ngOnInit(): void {
+    this.logService.init();
 
 
 
